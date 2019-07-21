@@ -1,8 +1,8 @@
-# React.js Frontend
+# Vue.js Frontend
 
 ### Requirements
-* node version 8.x
-* npm version 5.x
+* node version 8.x or newer
+* npm version 5.x or newer
 
 Install node and npm [here](https://nodejs.org/en/download/).
 
@@ -31,13 +31,9 @@ After that's done, run this to start development:
 npm run dev
 ```
 
-This will start running the app and automatically open it at [http://localhost:8087](http://localhost:8087). Anytime you change and save the code, it will automatically reload! This will remain a running process in your terminal, so you will need to open a new tab or window to execute other commands.
+This will start running the app and automatically open it at [http://localhost:8087](http://localhost:8087). Anytime you change and save the code, it will automatically reload! This will remain a running process in your terminal, so you will need to open a new tab or window to execute other commands. You can press `Ctrl-C` to stop running the frontend.
 
 ### Optional Setup
 Prettier is a tool that automatically reformats your code to follow a certain set of coding style guidelines. It is configured to run automatically before each commit. This makes sure all of our code follows the same code styles, enforcing good practices and minimizing conflicts.
 
-It is definitely not necessary for this exercise, but there are prettier plugins you can install for your editor. See instructions [here](https://github.com/prettier/prettier#editor-integration).
-
----------
-
-For instructions on completing the exercise, look at the [README.md](../README.md) in the main directory.
+It is definitely not necessary for this workshop, but there are prettier plugins you can install for your editor. See instructions [here](https://github.com/prettier/prettier#editor-integration).
