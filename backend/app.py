@@ -51,57 +51,69 @@ def mirror(name):
     data = {"name": name}
     return create_response(data)
 
-# Part 6
-@app.route("/shows", methods=['GET'])
+
+# return all shows in the database, with optional parameter for minEpisodes
+@app.route("/shows", methods=["GET"])
 def get_all_shows():
-    minEpisodes = request.args.get('minEpisodes')
-    shows = db.get('shows')
+    minEpisodes = request.args.get("minEpisodes")
+    shows = db.get("shows")
     if minEpisodes is not None:
         if int(minEpisodes) < 0:
-            return create_response(message="minEpisodes must be zero or more", status=400)
+            return create_response(
+                message="minEpisodes must be zero or more", status=400
+            )
         result = []
         for show in shows:
-            if (show['episodes_seen'] >= int(minEpisodes)):
+            if show["episodes_seen"] >= int(minEpisodes):
                 result.append(show)
         return create_response({"shows": result})
     return create_response({"shows": shows})
 
-@app.route("/shows/<id>", methods=['DELETE'])
-def delete_show(id):
-    if db.getById('shows', int(id)) is None:
-        return create_response(status=404, message="No show with this id exists")
-    db.deleteById('shows', int(id))
-    return create_response(message="Show deleted")
 
-
-# TODO: Implement the rest of the API here!
-
-# Part 2
-@app.route("/shows/<id>", methods=['GET'])
+# get show by ID
+@app.route("/shows/<id>", methods=["GET"])
 def get_show(id):
-    if db.getById('shows', int(id)) is None:
+    if db.getById("shows", int(id)) is None:
         return create_response(status=404, message="No show with this id exists")
-    show = db.getById('shows', int(id))
+    show = db.getById("shows", int(id))
     return create_response(data=show)
 
-# Part 3
-@app.route("/shows", methods=['POST'])
+
+# create a new show
+@app.route("/shows", methods=["POST"])
 def create_show():
     data = request.get_json()
     if data["name"] is None or data["episodes_seen"] is None:
-        return create_response(status=422, message="One or more required parameters are missing")
-    new_show = { "name": data["name"], "episodes_seen": data["episodes_seen"] }
-    db.create('shows', new_show)
-    return create_response(data=new_show, status=201, message="Show created successfully")
+        return create_response(
+            status=422, message="One or more required parameters are missing"
+        )
+    new_show = {"name": data["name"], "episodes_seen": data["episodes_seen"]}
+    db.create("shows", new_show)
+    return create_response(
+        data=new_show, status=201, message="Show created successfully"
+    )
 
-# Part 4
-@app.route("/shows/<id>", methods=['PUT'])
+
+# update an existing show
+@app.route("/shows/<id>", methods=["PUT"])
 def update_show(id):
-    if db.getById('shows', int(id)) is None:
+    if db.getById("shows", int(id)) is None:
         return create_response(status=404, message="No show with this id exists")
     data = request.get_json()
-    updated_show = db.updateById('shows', int(id), data)
-    return create_response(data=updated_show, status=201, message="Show updated successfully")
+    updated_show = db.updateById("shows", int(id), data)
+    return create_response(
+        data=updated_show, status=201, message="Show updated successfully"
+    )
+
+
+# delete show by ID
+@app.route("/shows/<id>", methods=["DELETE"])
+def delete_show(id):
+    if db.getById("shows", int(id)) is None:
+        return create_response(status=404, message="No show with this id exists")
+    db.deleteById("shows", int(id))
+    return create_response(message="Show deleted")
+
 
 """
 ~~~~~~~~~~~~ END API ~~~~~~~~~~~~
