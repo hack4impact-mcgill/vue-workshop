@@ -24,6 +24,7 @@
             >
           </div>
           <div class="col-2">
+            <!-- TODO: call createShow when this button is clicked -->
             <button
               type="button"
               class="btn btn-md btn-outline-primary"
@@ -34,7 +35,9 @@
       </div>
 
       <hr>
-      <!-- Render a list of ShowItem components here -->
+      <!-- TODO: Render a list of ShowItem components here -->
+      <!-- TODO: Capture the show-clicked event -->
+      <!-- TODO: Capture the show-removed event -->
       <ShowItem
         v-for="show in shows"
         v-bind:key="show.id"
@@ -56,6 +59,7 @@ export default {
   components: {
     ShowItem
   },
+  // TODO: add data variables for shows, newShowName and newShowEpisodesWatched
   data () {
     return {
       shows: mockdb.shows,
@@ -67,12 +71,12 @@ export default {
     goToShow: function (id) {
       Router.push({ path: '/shows/' + id })
     },
+    // TODO: add the createShow and removeShow functions
     createShow: function () {
       mockdb.createShow(this.newShowName, parseInt(this.newShowEpisodesWatched))
     },
     removeShow: function (id) {
       mockdb.deleteShowById(id)
-      //this.shows = mockdb.shows
     }
   }
 };

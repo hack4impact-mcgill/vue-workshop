@@ -3,6 +3,7 @@
     class="card"
     @click="emitShowClicked"
   >
+    <!-- TODO: display show name and episodes watched -->
     <p><strong>Show Name: </strong>{{ showName }}</p>
     <p><strong>Episodes Watched: </strong>{{ episodesWatched }}</p>
     <button
@@ -16,11 +17,7 @@
 
 <script>
 export default {
-  data () {
-    return {
-
-    }
-  },
+  // TODO: add props for showName and episodesWatched
   props: {
     showName: String,
     episodesWatched: Number
