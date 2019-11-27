@@ -7,20 +7,17 @@
       <input
         class="form-control"
         type="text"
-        v-model="showName"
       >
       <p>Episodes Seen</p>
       <!-- TODO: add v-model for episodesWatched -->
       <input
         class="form-control"
         type="text"
-        v-model="episodesWatched"
       >
       <!-- TODO: call updateShow on click -->
       <button
         type="button"
         class="btn btn-sm btn-outline-primary"
-        @click="updateShow"
       >Update</button>
     </div>
   </center>
@@ -40,11 +37,7 @@ export default {
   },
   // TODO: implement the created lifecycle hook
   // get the show and set showName and episodesWatched
-  created: function () {
-    const show = mockdb.getShowById(this.id)
-    this.showName = show.name
-    this.episodesWatched = show.episodes_seen
-  },
+
   methods: {
     updateShow: function () {
       mockdb.updateShowById(this.id, this.showName, parseInt(this.episodesWatched))

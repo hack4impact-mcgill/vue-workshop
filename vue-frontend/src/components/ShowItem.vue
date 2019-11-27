@@ -4,8 +4,7 @@
     @click="emitShowClicked"
   >
     <!-- TODO: display show name and episodes watched -->
-    <p><strong>Show Name: </strong>{{ showName }}</p>
-    <p><strong>Episodes Watched: </strong>{{ episodesWatched }}</p>
+
     <button
       type="button"
       id="remove-button"
@@ -18,10 +17,7 @@
 <script>
 export default {
   // TODO: add props for showName and episodesWatched
-  props: {
-    showName: String,
-    episodesWatched: Number
-  },
+
   methods: {
     emitShowClicked: function () {
       this.$emit('show-clicked')
