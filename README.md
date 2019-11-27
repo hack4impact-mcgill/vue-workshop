@@ -1,8 +1,8 @@
 # Hack4Impact Vue.js Workshop
 
-<center>
-    <img src="vue-frontend/static/hack4impact-logo-copy-v5.0-finale.png" alt="Hack4Impact McGill" width="350"/>
-</center>
+<p align="center">
+    <img src="vue-frontend/static/hack4impact-logo-copy-v5.0-finale.png" alt="Hack4Impact McGill" width="300"/>
+</p>
 
 This repository contains the starter code for the Hack4Impact McGill Vue.js Workshop (Fall 2019). 
 
