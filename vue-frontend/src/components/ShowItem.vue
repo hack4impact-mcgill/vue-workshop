@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="card"
-    @click="emitShowClicked"
-  >
+  <div class="card" @click="emitShowClicked">
     <!-- TODO: display show name and episodes watched -->
 
     <button
@@ -10,7 +7,9 @@
       id="remove-button"
       class="btn btn-sm btn-outline-danger"
       @click="emitShowDeleted"
-    >Remove</button>
+    >
+      Remove
+    </button>
   </div>
 </template>
 
@@ -19,14 +18,14 @@ export default {
   // TODO: add props for showName and episodesWatched
 
   methods: {
-    emitShowClicked: function () {
-      this.$emit('show-clicked')
+    emitShowClicked: function() {
+      this.$emit("show-clicked");
     },
-    emitShowDeleted: function () {
-      this.$emit('show-removed')
+    emitShowDeleted: function() {
+      this.$emit("show-removed");
     }
   }
-}
+};
 </script>
 
 <style scoped>

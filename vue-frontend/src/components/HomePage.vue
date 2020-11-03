@@ -2,10 +2,7 @@
   <div>
     <center>
       <h3>My Shows</h3>
-      <div
-        id="input-container"
-        class="container"
-      >
+      <div id="input-container" class="container">
         <div class="row">
           <div class="col-6">
             <input
@@ -13,7 +10,7 @@
               type="text"
               placeholder="Show Name"
               v-model="newShowName"
-            >
+            />
           </div>
           <div class="col-4">
             <input
@@ -21,31 +18,29 @@
               type="text"
               placeholder="Episodes Seen"
               v-model="newShowEpisodesWatched"
-            >
+            />
           </div>
           <div class="col-2">
             <!-- TODO: call createShow when this button is clicked -->
-            <button
-              type="button"
-              class="btn btn-md btn-outline-primary"
-            >Add</button>
+            <button type="button" class="btn btn-md btn-outline-primary">
+              Add
+            </button>
           </div>
         </div>
       </div>
 
-      <hr>
+      <hr />
       <!-- TODO: Render a list of ShowItem components here -->
       <!-- TODO: Capture the show-clicked event -->
       <!-- TODO: Capture the show-removed event -->
-
     </center>
   </div>
 </template>
 
 <script>
-import * as mockdb from '@/mockdb'
-import Router from '@/router'
-import ShowItem from './ShowItem.vue'
+import * as mockdb from "@/mockdb";
+import Router from "@/router";
+import ShowItem from "./ShowItem.vue";
 
 export default {
   components: {
@@ -54,11 +49,10 @@ export default {
   // TODO: add data variables for shows, newShowName and newShowEpisodesWatched
 
   methods: {
-    goToShow: function (id) {
-      Router.push({ path: '/shows/' + id })
-    },
+    goToShow: function(id) {
+      Router.push({ path: "/shows/" + id });
+    }
     // TODO: add the createShow and removeShow functions
-
   }
 };
 </script>
@@ -80,5 +74,3 @@ hr {
   width: 50%;
 }
 </style>
-
-

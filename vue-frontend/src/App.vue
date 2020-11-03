@@ -1,13 +1,8 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light"><a
-        class="navbar-brand"
-        href="/"
-      >myShows</a>
-      <div
-        class="collapse navbar-collapse"
-        id="navbarText"
-      >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">myShows</a>
+      <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto"></ul>
         <span class="navbar-text">
           Hack4Impact Vue.js workshop
@@ -21,8 +16,8 @@
 
 <script>
 export default {
-  name: 'app'
-}
+  name: "app"
+};
 </script>
 
 <style>
