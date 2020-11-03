@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="card"
-    @click="emitShowClicked"
-  >
+  <div class="card" @click="emitShowClicked">
     <!-- TODO: display show name and episodes watched -->
     <p><strong>Show Name: </strong>{{ showName }}</p>
     <p><strong>Episodes Watched: </strong>{{ episodesWatched }}</p>
@@ -11,7 +8,9 @@
       id="remove-button"
       class="btn btn-sm btn-outline-danger"
       @click="emitShowDeleted"
-    >Remove</button>
+    >
+      Remove
+    </button>
   </div>
 </template>
 
@@ -23,14 +22,14 @@ export default {
     episodesWatched: Number
   },
   methods: {
-    emitShowClicked: function () {
-      this.$emit('show-clicked')
+    emitShowClicked: function() {
+      this.$emit("show-clicked");
     },
-    emitShowDeleted: function () {
-      this.$emit('show-removed')
+    emitShowDeleted: function() {
+      this.$emit("show-removed");
     }
   }
-}
+};
 </script>
 
 <style scoped>
